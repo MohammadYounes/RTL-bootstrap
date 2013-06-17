@@ -1,3 +1,10 @@
+# [RTL Bootstrap v2.3.2](http://github.com/MohammadYounes/bootstrap)
+
+
+## Compiling CSS and JavaScript on Windows
+* [How to easily build and compile Twitter Bootstrap on Windows](http://rebootr.com/how-to-easily-build-twitter-bootstrap-on-windows/)
+
+
 # [Bootstrap v2.3.2](http://twitter.github.com/bootstrap) [![Build Status](https://secure.travis-ci.org/twitter/bootstrap.png)](http://travis-ci.org/twitter/bootstrap)
 
 Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created and maintained by [Mark Otto](http://twitter.com/mdo) and [Jacob Thornton](http://twitter.com/fat).
