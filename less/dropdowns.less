@@ -33,7 +33,7 @@
 // Place the caret
 .dropdown .caret {
   margin-top: 8px;
-  margin-left: 2px;
+  margin-right: 2px;
 }
 
 // The dropdown menu (ul)
@@ -41,10 +41,10 @@
 .dropdown-menu {
   position: absolute;
   top: 100%;
-  left: 0;
+  right: 0;
   z-index: @zindexDropdown;
   display: none; // none by default, but block on "open" of the menu
-  float: left;
+  float: right;
   min-width: 160px;
   padding: 5px 0;
   margin: 2px 0 0; // override default ul
@@ -52,7 +52,7 @@
   background-color: @dropdownBackground;
   border: 1px solid #ccc; // Fallback for IE7-8
   border: 1px solid @dropdownBorder;
-  *border-right-width: 2px;
+  *border-left-width: 2px;
   *border-bottom-width: 2px;
   .border-radius(6px);
   .box-shadow(0 5px 10px rgba(0,0,0,.2));
@@ -62,8 +62,8 @@
 
   // Aligns the dropdown menu to right
   &.pull-right {
-    right: 0;
-    left: auto;
+    left: 0;
+    right: auto;
   }
 
   // Dividers (basically an hr) within the dropdown
@@ -149,8 +149,8 @@
 // Right aligned dropdowns
 // ---------------------------
 .pull-right > .dropdown-menu {
-  right: 0;
-  left: auto;
+  left: 0;
+  right: auto;
 }
 
 // Allow for dropdowns to go bottom up (aka, dropup-menu)
@@ -181,10 +181,10 @@
 // Default dropdowns
 .dropdown-submenu > .dropdown-menu {
   top: 0;
-  left: 100%;
+  right: 100%;
   margin-top: -6px;
-  margin-left: -1px;
-  .border-radius(0 6px 6px 6px);
+  margin-right: -1px;
+  .border-radius(6px 0 6px 6px);
 }
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
@@ -203,18 +203,18 @@
 .dropdown-submenu > a:after {
   display: block;
   content: " ";
-  float: right;
+  float: left;
   width: 0;
   height: 0;
   border-color: transparent;
   border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: darken(@dropdownBackground, 20%);
+  border-width: 5px 5px 5px 0;
+  border-right-color: darken(@dropdownBackground, 20%);
   margin-top: 5px;
-  margin-right: -10px;
+  margin-left: -10px;
 }
 .dropdown-submenu:hover > a:after {
-  border-left-color: @dropdownLinkColorHover;
+  border-right-color: @dropdownLinkColorHover;
 }
 
 // Left aligned submenus
@@ -225,9 +225,9 @@
 
   // Positioning the submenu
   > .dropdown-menu {
-    left: -100%;
-    margin-left: 10px;
-    .border-radius(6px 0 6px 6px);
+    right: -100%;
+    margin-right: 10px;
+    .border-radius(0 6px 6px 6px);
   }
 }
 

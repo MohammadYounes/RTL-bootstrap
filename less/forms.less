@@ -224,12 +224,12 @@ textarea {
 .radio,
 .checkbox {
   min-height: @baseLineHeight; // clear the floating input if there is no label text
-  padding-left: 20px;
+  padding-right: 20px;
 }
 .radio input[type="radio"],
 .checkbox input[type="checkbox"] {
-  float: left;
-  margin-left: -20px;
+  float: right;
+  margin-right: -20px;
 }
 
 // Move the options list down to align with labels
@@ -249,7 +249,7 @@ textarea {
 }
 .radio.inline + .radio.inline,
 .checkbox.inline + .checkbox.inline {
-  margin-left: 10px; // space out consecutive inline controls
+  margin-right: 10px; // space out consecutive inline controls
 }
 
 
@@ -276,7 +276,7 @@ textarea[class*="span"],
 .row-fluid textarea[class*="span"],
 .row-fluid .uneditable-input[class*="span"] {
   float: none;
-  margin-left: 0;
+  margin-right: 0;
 }
 // Ensure input-prepend/append never wraps
 .input-append input[class*="span"],
@@ -309,7 +309,7 @@ textarea[class*="span"],
 .controls-row [class*="span"],
 // Redeclare the fluid grid collapse since we undo the float for inputs
 .row-fluid .controls-row [class*="span"] {
-  float: left;
+  float: right;
 }
 // Explicity set top padding on all checkboxes/radios, not just first-child
 .controls-row .checkbox[class*="span"],
@@ -411,7 +411,7 @@ select:focus:invalid {
   display: inline-block;
   .ie7-inline-block();
   vertical-align: middle;
-  padding-left: 5px;
+  padding-right: 5px;
 }
 
 
@@ -442,9 +442,9 @@ select:focus:invalid {
   .uneditable-input {
     position: relative; // placed here by default so that on :focus we can place the input above the .add-on for full border and box-shadow goodness
     margin-bottom: 0; // prevent bottom margin from screwing up alignment in stacked forms
-    *margin-left: 0;
+    *margin-right: 0;
     vertical-align: top;
-    .border-radius(0 @inputBorderRadius @inputBorderRadius 0);
+    .border-radius(@inputBorderRadius 0 0 @inputBorderRadius);
     // Make input on top when focused so blue border and shadow always show
     &:focus {
       z-index: 2;
@@ -479,12 +479,12 @@ select:focus:invalid {
 .input-prepend {
   .add-on,
   .btn {
-    margin-right: -1px;
+    margin-left: -1px;
   }
   .add-on:first-child,
   .btn:first-child {
     // FYI, `.btn:first-child` accounts for a button group that's prepended
-    .border-radius(@inputBorderRadius 0 0 @inputBorderRadius);
+    .border-radius(0 @inputBorderRadius @inputBorderRadius 0);
   }
 }
 
@@ -492,20 +492,20 @@ select:focus:invalid {
   input,
   select,
   .uneditable-input {
-    .border-radius(@inputBorderRadius 0 0 @inputBorderRadius);
+    .border-radius(0 @inputBorderRadius @inputBorderRadius 0);
     + .btn-group .btn:last-child {
-      .border-radius(0 @inputBorderRadius @inputBorderRadius 0);
+      .border-radius(@inputBorderRadius 0 0 @inputBorderRadius);
     }
   }
   .add-on,
   .btn,
   .btn-group {
-    margin-left: -1px;
+    margin-right: -1px;
   }
   .add-on:last-child,
   .btn:last-child,
   .btn-group:last-child > .dropdown-toggle {
-    .border-radius(0 @inputBorderRadius @inputBorderRadius 0);
+    .border-radius(@inputBorderRadius 0 0 @inputBorderRadius);
   }
 }
 
@@ -516,22 +516,26 @@ select:focus:invalid {
   .uneditable-input {
     .border-radius(0);
     + .btn-group .btn {
-      .border-radius(0 @inputBorderRadius @inputBorderRadius 0);
+      .border-radius(@inputBorderRadius 0 0 @inputBorderRadius);
     }
   }
   .add-on:first-child,
   .btn:first-child {
-    margin-right: -1px;
-    .border-radius(@inputBorderRadius 0 0 @inputBorderRadius);
-  }
-  .add-on:last-child,
-  .btn:last-child {
     margin-left: -1px;
     .border-radius(0 @inputBorderRadius @inputBorderRadius 0);
   }
-  .btn-group:first-child {
-    margin-left: 0;
+  .add-on:last-child,
+  .btn:last-child {
+    margin-right: -1px;
+    .border-radius(@inputBorderRadius 0 0 @inputBorderRadius);
   }
+  .btn-group:first-child {
+    margin-right: 0;
+  }
+  
+}
+.input-append > .btn-group:not(:first-child) > .btn:first-child:not(.dropdown-toggle){
+    .border-radius(0);
 }
 
 
@@ -555,16 +559,16 @@ input.search-query {
   .border-radius(0); // Override due to specificity
 }
 .form-search .input-append .search-query {
-  .border-radius(14px 0 0 14px);
+  .border-radius(0 14px 14px 0);
 }
 .form-search .input-append .btn {
-  .border-radius(0 14px 14px 0);
+  .border-radius(14px 0 0 14px);
 }
 .form-search .input-prepend .search-query {
-  .border-radius(0 14px 14px 0);
+  .border-radius(14px 0 0 14px);
 }
 .form-search .input-prepend .btn {
-  .border-radius(14px 0 0 14px);
+  .border-radius(0 14px 14px 0);
 }
 
 
@@ -614,7 +618,7 @@ input.search-query {
 .form-search .checkbox,
 .form-inline .radio,
 .form-inline .checkbox {
-  padding-left: 0;
+  padding-right: 0;
   margin-bottom: 0;
   vertical-align: middle;
 }
@@ -623,9 +627,9 @@ input.search-query {
 .form-search .checkbox input[type="checkbox"],
 .form-inline .radio input[type="radio"],
 .form-inline .checkbox input[type="checkbox"] {
-  float: left;
-  margin-right: 3px;
-  margin-left: 0;
+  float: right;
+  margin-left: 3px;
+  margin-right: 0;
 }
 
 
@@ -651,21 +655,21 @@ legend + .control-group {
   }
   // Float the labels left
   .control-label {
-    float: left;
+    float: right;
     width: @horizontalComponentOffset - 20;
     padding-top: 5px;
-    text-align: right;
+    text-align: left;
   }
   // Move over all input controls and content
   .controls {
     // Super jank IE7 fix to ensure the inputs in .input-append and input-prepend
     // don't inherit the margin of the parent, in this case .controls
     *display: inline-block;
-    *padding-left: 20px;
-    margin-left: @horizontalComponentOffset;
-    *margin-left: 0;
+    *padding-right: 20px;
+    margin-right: @horizontalComponentOffset;
+    *margin-right: 0;
     &:first-child {
-      *padding-left: @horizontalComponentOffset;
+      *padding-right: @horizontalComponentOffset;
     }
   }
   // Remove bottom margin on block level help text since that's accounted for on .control-group
@@ -685,6 +689,6 @@ legend + .control-group {
   }
   // Move over buttons in .form-actions to align with .controls
   .form-actions {
-    padding-left: @horizontalComponentOffset;
+    padding-right: @horizontalComponentOffset;
   }
 }
