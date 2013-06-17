@@ -134,6 +134,10 @@
           this.options.placement.call(this, $tip[0], this.$element[0]) :
           this.options.placement
 
+        //RTL reverse, as right means to the right of contents not the screen.
+        if ($('body').css('direction') == 'rtl')
+            placement = placement == "right" ? "left" : (placement == "left" ? "right" : placement);
+            
         $tip
           .detach()
           .css({ top: 0, left: 0, display: 'block' })
