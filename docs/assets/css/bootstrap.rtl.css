@@ -5190,7 +5190,7 @@ a.badge:focus {
 }
 .carousel-indicators li {
   display: block;
-  float: left;
+  float:right;
   width: 10px;
   height: 10px;
   margin-left: 5px;
