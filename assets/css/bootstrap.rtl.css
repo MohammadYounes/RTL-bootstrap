@@ -5109,10 +5109,10 @@ a.badge:focus {
 .carousel-inner > .item {
   display: none;
   position: relative;
-  -webkit-transition: 0.6s ease-in-out left;
-  -moz-transition: 0.6s ease-in-out left;
-  -o-transition: 0.6s ease-in-out left;
-  transition: 0.6s ease-in-out left;
+  -webkit-transition: 0.6s ease-in-out right;
+  -moz-transition: 0.6s ease-in-out right;
+  -o-transition: 0.6s ease-in-out right;
+  transition: 0.6s ease-in-out right;
 }
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
@@ -5125,7 +5125,7 @@ a.badge:focus {
   display: block;
 }
 .carousel-inner > .active {
-  left: 0;
+  right: 0;
 }
 .carousel-inner > .next,
 .carousel-inner > .prev {
@@ -5134,20 +5134,20 @@ a.badge:focus {
   width: 100%;
 }
 .carousel-inner > .next {
-  left: 100%;
+  right: 100%;
 }
 .carousel-inner > .prev {
-  left: -100%;
+  right: -100%;
 }
 .carousel-inner > .next.left,
 .carousel-inner > .prev.right {
-  left: 0;
+  right: 0;
 }
 .carousel-inner > .active.left {
-  left: -100%;
+  right: -100%;
 }
 .carousel-inner > .active.right {
-  left: 100%;
+  right: 100%;
 }
 .carousel-control {
   position: absolute;
@@ -5190,7 +5190,7 @@ a.badge:focus {
 }
 .carousel-indicators li {
   display: block;
-  float:right;
+  float: right;
   width: 10px;
   height: 10px;
   margin-left: 5px;
