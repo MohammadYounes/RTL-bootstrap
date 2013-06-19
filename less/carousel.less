@@ -20,7 +20,7 @@
   > .item {
     display: none;
     position: relative;
-    .transition(.6s ease-in-out left);
+    .transition(.6s ease-in-out right);
 
     // Account for jankitude on images
     > img,
@@ -35,7 +35,7 @@
   > .prev { display: block; }
 
   > .active {
-    left: 0;
+    right: 0;
   }
 
   > .next,
@@ -46,21 +46,21 @@
   }
 
   > .next {
-    left: 100%;
+    right: 100%;
   }
   > .prev {
-    left: -100%;
+    right: -100%;
   }
   > .next.left,
   > .prev.right {
-    left: 0;
+    right: 0;
   }
 
   > .active.left {
-    left: -100%;
+    right: -100%;
   }
   > .active.right {
-    left: 100%;
+    right: 100%;
   }
 
 }
@@ -112,7 +112,7 @@
 .carousel-indicators {
   position: absolute;
   top: 15px;
-  right: 15px;
+  left: 15px;
   z-index: 5;
   margin: 0;
   list-style: none;
