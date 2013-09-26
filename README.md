@@ -1,7 +1,7 @@
-# [RTL Bootstrap v3.0.0](http://github.com/MohammadYounes/bootstrap)
+# [RTL Bootstrap v3.0.0](https://github.com/MohammadYounes/RTL-bootstrap)
 
 
-RTL version of [twitter’s bootstrap]( https://github.com/twitter/bootstrap)
+RTL version of [twitter’s bootstrap]( https://github.com/twbs/bootstrap)
 
 For a live preview, checkout the [RTL demo pages] (http://mohammadyounes.github.io/RTL-bootstrap/)
 
