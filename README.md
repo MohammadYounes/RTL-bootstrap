@@ -1,4 +1,4 @@
-# [Bootstrap v3.0.0 RTL](https://github.com/MohammadYounes/RTL-bootstrap)
+# [Bootstrap 3 RTL](https://github.com/MohammadYounes/RTL-bootstrap)
 
 
 RTL version of [twitter’s bootstrap]( https://github.com/twbs/bootstrap)
