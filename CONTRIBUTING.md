@@ -36,6 +36,10 @@ Good bug reports are extremely helpful, so thanks!
 
 Guidelines for bug reports:
 
+0. **Validate and lint your code** &mdash; [validate your HTML](http://html5.validator.nu)
+   and [lint your HTML](https://github.com/twbs/bootlint) to ensure your
+   problem isn't caused by a simple error in your own code.
+
 1. **Use the GitHub issue search** &mdash; check if the issue has already been
    reported.
 
@@ -184,4 +188,3 @@ Run `grunt test` before committing to ensure your changes follow our coding stan
 By contributing your code, you agree to license your contribution under the [MIT license](https://github.com/twbs/bootstrap/blob/master/LICENSE).
 
 Prior to v3.1.0, Bootstrap was released under the Apache License v2.0.
-
