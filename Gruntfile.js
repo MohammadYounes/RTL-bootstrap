@@ -178,6 +178,42 @@ module.exports = function (grunt) {
       }
     },
 
+    rtlcss: {
+      options: {
+        config:{
+          // rtlcss options
+        }
+      },
+      core: {
+        options: {
+          map: true
+        },
+        src: 'dist/css/<%= pkg.name %>.css',
+        dest: 'dist/css/<%= pkg.name %>.rtl.css'
+      },
+      theme: {
+        options: {
+          map: true
+        },
+        src: 'dist/css/<%= pkg.name %>-theme.css',
+        dest: 'dist/css/<%= pkg.name %>-theme.rtl.css'
+      },
+      docs: {
+        expand: true,
+        cwd: 'docs/assets/css/src/',
+        src: ['**/*.css', '!**/*.rtl.css'],
+        dest: 'docs/assets/css/src/',
+        ext: '.rtl.css'
+      },
+      examples: {
+        expand: true,
+        cwd: 'docs/examples/',
+        src: ['**/*.css', '!**/*.rtl.css'],
+        dest:'docs/examples/',
+        ext: '.rtl.css'
+      }
+    },
+
     autoprefixer: {
       options: {
         browsers: [
@@ -244,9 +280,17 @@ module.exports = function (grunt) {
         src: 'dist/css/<%= pkg.name %>.css',
         dest: 'dist/css/<%= pkg.name %>.min.css'
       },
+      minifyCoreRTL: {
+        src: 'dist/css/<%= pkg.name %>.rtl.css',
+        dest: 'dist/css/<%= pkg.name %>.rtl.min.css'
+      },
       minifyTheme: {
         src: 'dist/css/<%= pkg.name %>-theme.css',
         dest: 'dist/css/<%= pkg.name %>-theme.min.css'
+      },
+      minifyThemeRTL: {
+        src: 'dist/css/<%= pkg.name %>-theme.rtl.css',
+        dest: 'dist/css/<%= pkg.name %>-theme.rtl.min.css'
       },
       docs: {
         src: [
@@ -254,6 +298,13 @@ module.exports = function (grunt) {
           'docs/assets/css/src/pygments-manni.css'
         ],
         dest: 'docs/assets/css/docs.min.css'
+      },
+      docsRTL: {
+        src: [
+          'docs/assets/css/src/docs.rtl.css',
+          'docs/assets/css/src/pygments-manni.rtl.css'
+        ],
+        dest: 'docs/assets/css/docs.rtl.min.css'
       }
     },
 
@@ -280,7 +331,7 @@ module.exports = function (grunt) {
       examples: {
         expand: true,
         cwd: 'docs/examples/',
-        src: '**/*.css',
+        src: ['**/*.css', '**/*.rtl.css'],
         dest: 'docs/examples/'
       },
       docs: {
@@ -434,7 +485,7 @@ module.exports = function (grunt) {
 
   // CSS distribution task.
   grunt.registerTask('less-compile', ['less:compileCore', 'less:compileTheme']);
-  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:core', 'autoprefixer:theme', 'usebanner', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme']);
+  grunt.registerTask('dist-css', ['less-compile','rtlcss:core', 'rtlcss:theme', 'autoprefixer:core', 'autoprefixer:theme', 'usebanner', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme', 'cssmin:minifyCoreRTL', 'cssmin:minifyThemeRTL']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'dist-js']);
@@ -456,7 +507,7 @@ module.exports = function (grunt) {
   });
 
   // Docs task.
-  grunt.registerTask('docs-css', ['autoprefixer:docs', 'autoprefixer:examples', 'csscomb:docs', 'csscomb:examples', 'cssmin:docs']);
+  grunt.registerTask('docs-css', ['autoprefixer:docs', 'autoprefixer:examples','rtlcss:docs', 'rtlcss:examples', 'csscomb:docs', 'csscomb:examples', 'cssmin:docs', 'cssmin:docsRTL']);
   grunt.registerTask('lint-docs-css', ['csslint:docs', 'csslint:examples']);
   grunt.registerTask('docs-js', ['uglify:docsJs', 'uglify:customize']);
   grunt.registerTask('lint-docs-js', ['jshint:assets', 'jscs:assets']);

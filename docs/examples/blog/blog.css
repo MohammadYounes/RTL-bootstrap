@@ -61,11 +61,11 @@ h6, .h6 {
 }
 .blog-nav .active:after {
   position: absolute;
+  right: 50%;
   bottom: 0;
-  left: 50%;
   width: 0;
   height: 0;
-  margin-left: -5px;
+  margin-right: -5px;
   vertical-align: middle;
   content: " ";
   border-right: 5px solid transparent;
@@ -124,7 +124,7 @@ h6, .h6 {
 /* Pagination */
 .pager {
   margin-bottom: 60px;
-  text-align: left;
+  text-align: right;
 }
 .pager > li > a {
   width: 140px;

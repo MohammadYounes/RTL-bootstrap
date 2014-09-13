@@ -1337,6 +1337,8 @@ kbd,
 pre,
 samp {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+
+  direction: ltr /*rtl:ignore*/;
 }
 code {
   padding: 2px 4px;
@@ -3497,6 +3499,27 @@ tbody.collapse.in {
 .btn-group-justified > .btn-group .btn {
   width: 100%;
 }
+.btn-group-justified > .btn-group > .btn:first-child {
+  padding-right: 26px;
+  margin-right: -26px;
+}
+.btn-group-justified > .btn-group-lg > .btn-lg:first-child {
+  padding-right: 36px;
+  margin-right: -36px;
+}
+.btn-group-justified > .btn-group > .btn.dropdown-toggle:first-child {
+  padding-right: 0;
+  margin-right: 0;
+}
+.btn-group-justified > .btn-group > .btn + .dropdown-toggle {
+  z-index: 3;
+  float: right;
+  width: auto;
+}
+.btn-group-justified > .btn-group:last-child > .btn:first-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
 .btn-group-justified > .btn-group .dropdown-menu {
   left: auto;
 }
@@ -4680,9 +4703,9 @@ a.list-group-item.active > .badge,
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
-  -webkit-transition: all .2s ease-in-out;
-       -o-transition: all .2s ease-in-out;
-          transition: all .2s ease-in-out;
+  -webkit-transition: border .2s ease-in-out;
+       -o-transition: border .2s ease-in-out;
+          transition: border .2s ease-in-out;
 }
 .thumbnail > img,
 .thumbnail a > img {
@@ -5158,6 +5181,13 @@ a.list-group-item-danger.active:focus {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
+.panel > .table:first-child > thead:first-child > tr:first-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
 .panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
@@ -5180,6 +5210,13 @@ a.list-group-item-danger.active:focus {
 }
 .panel > .table:last-child,
 .panel > .table-responsive:last-child > .table:last-child {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.panel > .table:last-child > tbody:last-child > tr:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }

@@ -71,7 +71,7 @@ body {
   display: inline-block;
 }
 .masthead-nav > li + li {
-  margin-left: 20px;
+  margin-right: 20px;
 }
 .masthead-nav > li > a {
   padding-right: 0;
@@ -97,10 +97,10 @@ body {
 
 @media (min-width: 768px) {
   .masthead-brand {
-    float: left;
+    float: right;
   }
   .masthead-nav {
-    float: right;
+    float: left;
   }
 }
 

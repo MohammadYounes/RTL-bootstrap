@@ -1298,7 +1298,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
 
       $tip
         .detach()
-        .css({ top: 0, left: 0, display: 'block' })
+        .css({ top: 0, left: 0, right: '', display: 'block' })
         .addClass(placement)
         .data('bs.' + this.type, this)
 
@@ -1323,6 +1323,11 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
           .removeClass(orgPlacement)
           .addClass(placement)
       }
+
+      if ($(document.body).css('direction') === 'rtl')
+        placement = placement === 'right' ? 'left' :
+                    placement === 'left'  ? 'right' :
+                    placement
 
       var calculatedOffset = this.getCalculatedOffset(placement, pos, actualWidth, actualHeight)
 
@@ -1387,7 +1392,18 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     var arrowPosition       = delta.left ? 'left'        : 'top'
     var arrowOffsetPosition = delta.left ? 'offsetWidth' : 'offsetHeight'
 
+    if ($(document.body).css('direction') === 'rtl') {
+      var $parent = this.$element.parent()
+      $tip.css(
+        {
+          left: '',
+          right: this.options.container ? this.$viewport.width() - offset.left - $tip.outerWidth() : this.$viewport.width() - offset.left - $tip.outerWidth() - (this.$viewport.width() - $parent.offset().left - $parent.outerWidth())
+        })
+      delete offset.left
+    }
+
     $tip.offset(offset)
+
     this.replaceArrow(arrowDelta, $tip[0][arrowOffsetPosition], arrowPosition)
   }
 

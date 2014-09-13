@@ -343,7 +343,7 @@ body {
   float: none !important;
   width: auto !important;
   height: auto !important;
-  margin-left: 145px !important;
+  margin-left: 145px !important/*rtl:ignore*/;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 .carbonad-text {

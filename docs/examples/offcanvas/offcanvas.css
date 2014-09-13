@@ -26,29 +26,29 @@ footer {
   }
 
   .row-offcanvas-right {
-    right: 0;
+    left: 0;
   }
 
   .row-offcanvas-left {
-    left: 0;
+    right: 0;
   }
 
   .row-offcanvas-right
   .sidebar-offcanvas {
-    right: -50%; /* 6 columns */
+    left: -50%; /* 6 columns */
   }
 
   .row-offcanvas-left
   .sidebar-offcanvas {
-    left: -50%; /* 6 columns */
+    right: -50%; /* 6 columns */
   }
 
   .row-offcanvas-right.active {
-    right: 50%; /* 6 columns */
+    left: 50%; /* 6 columns */
   }
 
   .row-offcanvas-left.active {
-    left: 50%; /* 6 columns */
+    right: 50%; /* 6 columns */
   }
 
   .sidebar-offcanvas {

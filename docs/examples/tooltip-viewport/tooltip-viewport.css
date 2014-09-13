@@ -9,7 +9,7 @@ body {
   min-width: 250px;
   max-width: 500px;
   min-height: 100px;
-  text-align: left;
+  text-align: right;
 }
 .container-viewport {
   position: absolute;
@@ -21,6 +21,6 @@ body {
 }
 .btn-bottom {
   position: absolute;
+  right: 0;
   bottom: 0;
-  left: 0;
 }

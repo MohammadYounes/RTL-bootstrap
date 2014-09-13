@@ -1337,6 +1337,8 @@ kbd,
 pre,
 samp {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+
+  direction: ltr /*rtl:ignore*/;
 }
 code {
   padding: 2px 4px;
@@ -3496,6 +3498,27 @@ tbody.collapse.in {
 }
 .btn-group-justified > .btn-group .btn {
   width: 100%;
+}
+.btn-group-justified > .btn-group > .btn:first-child {
+  padding-right: 26px;
+  margin-right: -26px;
+}
+.btn-group-justified > .btn-group-lg > .btn-lg:first-child {
+  padding-right: 36px;
+  margin-right: -36px;
+}
+.btn-group-justified > .btn-group > .btn.dropdown-toggle:first-child {
+  padding-right: 0;
+  margin-right: 0;
+}
+.btn-group-justified > .btn-group > .btn + .dropdown-toggle {
+  z-index: 3;
+  float: right;
+  width: auto;
+}
+.btn-group-justified > .btn-group:last-child > .btn:first-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 .btn-group-justified > .btn-group .dropdown-menu {
   left: auto;
