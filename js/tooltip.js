@@ -267,10 +267,12 @@
 
     if ($(document.body).css('direction') === 'rtl') {
       var $parent = this.$element.parent()
+      var viewportWidth = this.$viewport.width()
+      var right = viewportWidth - offset.left - actualWidth
       $tip.css(
         {
           left: '',
-          right: this.options.container ? this.$viewport.width() - offset.left - $tip.outerWidth() : this.$viewport.width() - offset.left - $tip.outerWidth() - (this.$viewport.width() - $parent.offset().left - $parent.outerWidth())
+          right: this.options.container ?  right : right - (viewportWidth - $parent.offset().left - $parent.outerWidth()) /*right - container right*/
         })
       delete offset.left
     }
