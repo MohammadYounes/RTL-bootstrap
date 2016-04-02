@@ -28,7 +28,7 @@
     })
 
     // Kill links
-    $('.bs-docs-container [href=#]').click(function (e) {
+    $('.bs-docs-container [href="#"]').click(function (e) {
       e.preventDefault()
     })
 
@@ -55,6 +55,36 @@
     setTimeout(function () {
       $('.bs-top').affix()
     }, 100)
+
+    // Direction toggler
+    ;(function () {
+      var $dirBtn = $('.bs-docs-dir-toggle')
+
+      var activateLTR = function () {
+        $dirBtn.text('Switch to RTL')
+        document.documentElement.dir = 'ltr'
+      }
+
+      var activateRTL = function () {
+        $dirBtn.text('Switch to LTR')
+        document.documentElement.dir = 'rtl'
+        localStorage.setItem('rtl', true)
+      }
+
+      if (localStorage.getItem('rtl')) {
+        activateRTL()
+      }
+
+      $dirBtn.click(function () {
+        var dir = document.documentElement.dir
+        if (dir === 'rtl') {
+          activateLTR()
+          localStorage.removeItem('rtl')
+        } else {
+          activateRTL()
+        }
+      })
+    })();
 
     // Theme toggler
     ;(function () {

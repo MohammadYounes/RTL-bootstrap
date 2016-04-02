@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <!-- Meta, title, CSS, favicons, etc. -->
     {% include header.html %}
@@ -48,6 +48,9 @@
             </ul>
             <a class="back-to-top" href="#top">
               Back to top
+            </a>
+            <a href="#" class="bs-docs-dir-toggle">
+              Switch to RTL
             </a>
             {% if page.slug == "css" or page.slug == "components" or page.slug == "js" %}
             <a href="#" class="bs-docs-theme-toggle" role="button">

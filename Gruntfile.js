@@ -203,6 +203,43 @@ module.exports = function (grunt) {
         dest: 'docs/examples/'
       }
     },
+    postcss: {
+      options: {
+        map: {
+          inline: false
+        },
+        processors: [
+            require('postcss-inline-rtl')()
+        ]
+      },
+      core: {
+        src: 'dist/css/<%= pkg.name %>.css'
+      },
+      theme: {
+        src: 'dist/css/<%= pkg.name %>-theme.css'
+      },
+      docs: {
+        options: {
+          map: false,
+          processors: [
+            require('postcss-inline-rtl')()
+          ]
+        },
+        src: ['docs/assets/css/src/docs.css']
+      },
+      examples: {
+        options: {
+          map: false,
+          processors: [
+            require('postcss-inline-rtl')()
+          ]
+        },
+        expand: true,
+        cwd: 'docs/examples/',
+        src: ['**/*.css'],
+        dest: 'docs/examples/'
+      }
+    },
 
     csslint: {
       options: {
@@ -460,7 +497,7 @@ module.exports = function (grunt) {
 
   // CSS distribution task.
   grunt.registerTask('less-compile', ['less:compileCore', 'less:compileTheme']);
-  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:core', 'autoprefixer:theme', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme']);
+  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:core', 'autoprefixer:theme','postcss:core', 'postcss:theme', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'dist-js']);
@@ -485,7 +522,7 @@ module.exports = function (grunt) {
   });
 
   // Docs task.
-  grunt.registerTask('docs-css', ['autoprefixer:docs', 'autoprefixer:examples', 'csscomb:docs', 'csscomb:examples', 'cssmin:docs']);
+  grunt.registerTask('docs-css', ['autoprefixer:docs', 'autoprefixer:examples', 'postcss:docs', 'postcss:examples', 'csscomb:docs', 'csscomb:examples', 'cssmin:docs']);
   grunt.registerTask('lint-docs-css', ['csslint:docs', 'csslint:examples']);
   grunt.registerTask('docs-js', ['uglify:docsJs', 'uglify:customize']);
   grunt.registerTask('lint-docs-js', ['jshint:assets', 'jscs:assets']);

@@ -339,8 +339,8 @@ h4 code {
 .carbonad-img {
   margin: 0 !important;
 }
-.carbonad-text,
-.carbonad-tag {
+html .carbonad-text,
+html .carbonad-tag {
   display: block !important;
   float: none !important;
   width: auto !important;
@@ -602,7 +602,8 @@ h4 code {
 
 /* Back to top (hidden on mobile) */
 .back-to-top,
-.bs-docs-theme-toggle {
+.bs-docs-theme-toggle,
+.bs-docs-dir-toggle {
   display: none;
   padding: 4px 10px;
   margin-top: 10px;
@@ -612,17 +613,20 @@ h4 code {
   color: #999;
 }
 .back-to-top:hover,
-.bs-docs-theme-toggle:hover {
+.bs-docs-theme-toggle:hover,
+.bs-docs-dir-toggle:hover {
   color: #563d7c;
   text-decoration: none;
 }
-.bs-docs-theme-toggle {
+.bs-docs-theme-toggle,
+.bs-docs-dir-toggle {
   margin-top: 0;
 }
 
 @media (min-width: 768px) {
   .back-to-top,
-  .bs-docs-theme-toggle {
+  .bs-docs-theme-toggle,
+  .bs-docs-dir-toggle {
     display: block;
   }
 }
