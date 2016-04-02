@@ -1,0 +1,8 @@
+html[dir] body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+html[dir] .navbar {
+  margin-bottom: 20px;
+}

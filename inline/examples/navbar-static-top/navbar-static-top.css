@@ -1,0 +1,7 @@
+body {
+  min-height: 2000px;
+}
+
+html[dir] .navbar-static-top {
+  margin-bottom: 19px;
+}

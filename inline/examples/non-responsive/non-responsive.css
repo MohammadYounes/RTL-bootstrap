@@ -1,0 +1,341 @@
+/* Template-specific stuff
+ *
+ * Customizations just for the template; these are not necessary for anything
+ * with disabling the responsiveness.
+ */
+
+/* Account for fixed navbar */
+html[dir] body {
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
+body,
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  min-width: 970px;
+}
+
+/* Don't let the lead text change font-size. */
+.lead {
+  font-size: 16px;
+}
+
+/* Finesse the page header spacing */
+html[dir] .page-header {
+  margin-bottom: 30px;
+}
+html[dir] .page-header .lead {
+  margin-bottom: 10px;
+}
+
+
+/* Non-responsive overrides
+ *
+ * Utilize the following CSS to disable the responsive-ness of the container,
+ * grid system, and navbar.
+ */
+
+/* Reset the container */
+.container {
+  width: 970px;
+  max-width: none !important;
+}
+
+/* Demonstrate the grids */
+html[dir] .col-xs-4 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #eee;
+  background-color: rgba(86,61,124,.15);
+  border: 1px solid #ddd;
+  border: 1px solid rgba(86,61,124,.2);
+}
+
+html[dir="ltr"] .container .navbar-header, html[dir="ltr"] .container .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+html[dir="rtl"] .container .navbar-header, html[dir="rtl"] .container .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* Always float the navbar header */
+html[dir="ltr"] .navbar-header {
+  float: left;
+}
+html[dir="rtl"] .navbar-header {
+  float: right;
+}
+
+/* Undo the collapsing navbar */
+.navbar-collapse {
+  display: block !important;
+  height: auto !important;
+  overflow: visible !important;
+  visibility: visible !important;
+}
+html[dir] .navbar-collapse {
+  padding-bottom: 0;
+}
+
+.navbar-toggle {
+  display: none;
+}
+html[dir] .navbar-collapse {
+  border-top: 0;
+}
+
+html[dir="ltr"] .navbar-brand {
+  margin-left: -15px;
+}
+
+html[dir="rtl"] .navbar-brand {
+  margin-right: -15px;
+}
+
+/* Always apply the floated nav */
+html[dir] .navbar-nav {
+  margin: 0;
+}
+html[dir="ltr"] .navbar-nav {
+  float: left;
+}
+html[dir="rtl"] .navbar-nav {
+  float: right;
+}
+html[dir="ltr"] .navbar-nav > li {
+  float: left;
+}
+html[dir="rtl"] .navbar-nav > li {
+  float: right;
+}
+html[dir] .navbar-nav > li > a {
+  padding: 15px;
+}
+
+/* Redeclare since we override the float above */
+html[dir="ltr"] .navbar-nav.navbar-right {
+  float: right;
+}
+html[dir="rtl"] .navbar-nav.navbar-right {
+  float: left;
+}
+
+/* Undo custom dropdowns */
+.navbar .navbar-nav .open .dropdown-menu {
+  position: absolute;
+}
+html[dir] .navbar .navbar-nav .open .dropdown-menu {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-width: 0 1px 1px;
+  border-radius: 0 0 4px 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+html[dir="ltr"] .navbar .navbar-nav .open .dropdown-menu {
+  float: left;
+}
+html[dir="rtl"] .navbar .navbar-nav .open .dropdown-menu {
+  float: right;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: #333;
+}
+.navbar .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > li > a:focus,
+.navbar .navbar-nav .open .dropdown-menu > .active > a,
+.navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #fff !important;
+}
+html[dir] .navbar .navbar-nav .open .dropdown-menu > li > a:hover, html[dir] .navbar .navbar-nav .open .dropdown-menu > li > a:focus, html[dir] .navbar .navbar-nav .open .dropdown-menu > .active > a, html[dir] .navbar .navbar-nav .open .dropdown-menu > .active > a:hover, html[dir] .navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
+  background-color: #428bca !important;
+}
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a,
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+  color: #999 !important;
+}
+html[dir] .navbar .navbar-nav .open .dropdown-menu > .disabled > a, html[dir] .navbar .navbar-nav .open .dropdown-menu > .disabled > a:hover, html[dir] .navbar .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+  background-color: transparent !important;
+}
+
+/* Undo form expansion */
+.navbar-form {
+  width: auto;
+}
+html[dir] .navbar-form {
+  padding-top: 0;
+  padding-bottom: 0;
+  border: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+html[dir="ltr"] .navbar-form {
+  float: left;
+  margin-right: 0;
+  margin-left: 0;
+}
+html[dir="rtl"] .navbar-form {
+  float: right;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* Copy-pasted from forms.less since we mixin the .form-inline styles. */
+.navbar-form .form-group {
+  display: inline-block;
+  vertical-align: middle;
+}
+html[dir] .navbar-form .form-group {
+  margin-bottom: 0;
+}
+
+.navbar-form .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+}
+
+.navbar-form .form-control-static {
+  display: inline-block;
+}
+
+.navbar-form .input-group {
+  display: inline-table;
+  vertical-align: middle;
+}
+
+.navbar-form .input-group .input-group-addon,
+.navbar-form .input-group .input-group-btn,
+.navbar-form .input-group .form-control {
+  width: auto;
+}
+
+.navbar-form .input-group > .form-control {
+  width: 100%;
+}
+
+.navbar-form .control-label {
+  vertical-align: middle;
+}
+
+html[dir] .navbar-form .control-label {
+  margin-bottom: 0;
+}
+
+.navbar-form .radio,
+.navbar-form .checkbox {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+html[dir] .navbar-form .radio, html[dir] .navbar-form .checkbox {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+html[dir="ltr"] .navbar-form .radio label, html[dir="ltr"] .navbar-form .checkbox label {
+  padding-left: 0;
+}
+
+html[dir="rtl"] .navbar-form .radio label, html[dir="rtl"] .navbar-form .checkbox label {
+  padding-right: 0;
+}
+
+.navbar-form .radio input[type="radio"],
+.navbar-form .checkbox input[type="checkbox"] {
+  position: relative;
+}
+
+html[dir="ltr"] .navbar-form .radio input[type="radio"], html[dir="ltr"] .navbar-form .checkbox input[type="checkbox"] {
+  margin-left: 0;
+}
+
+html[dir="rtl"] .navbar-form .radio input[type="radio"], html[dir="rtl"] .navbar-form .checkbox input[type="checkbox"] {
+  margin-right: 0;
+}
+
+.navbar-form .has-feedback .form-control-feedback {
+  top: 0;
+}
+
+/* Undo inline form compaction on small screens */
+.form-inline .form-group {
+  display: inline-block;
+  vertical-align: middle;
+}
+html[dir] .form-inline .form-group {
+  margin-bottom: 0;
+}
+
+.form-inline .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+}
+
+.form-inline .form-control-static {
+  display: inline-block;
+}
+
+.form-inline .input-group {
+  display: inline-table;
+  vertical-align: middle;
+}
+.form-inline .input-group .input-group-addon,
+.form-inline .input-group .input-group-btn,
+.form-inline .input-group .form-control {
+  width: auto;
+}
+
+.form-inline .input-group > .form-control {
+  width: 100%;
+}
+
+.form-inline .control-label {
+  vertical-align: middle;
+}
+
+html[dir] .form-inline .control-label {
+  margin-bottom: 0;
+}
+
+.form-inline .radio,
+.form-inline .checkbox {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+html[dir] .form-inline .radio, html[dir] .form-inline .checkbox {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+html[dir="ltr"] .form-inline .radio label, html[dir="ltr"] .form-inline .checkbox label {
+  padding-left: 0;
+}
+html[dir="rtl"] .form-inline .radio label, html[dir="rtl"] .form-inline .checkbox label {
+  padding-right: 0;
+}
+
+.form-inline .radio input[type="radio"],
+.form-inline .checkbox input[type="checkbox"] {
+  position: relative;
+}
+
+html[dir="ltr"] .form-inline .radio input[type="radio"], html[dir="ltr"] .form-inline .checkbox input[type="checkbox"] {
+  margin-left: 0;
+}
+
+html[dir="rtl"] .form-inline .radio input[type="radio"], html[dir="rtl"] .form-inline .checkbox input[type="checkbox"] {
+  margin-right: 0;
+}
+
+.form-inline .has-feedback .form-control-feedback {
+  top: 0;
+}

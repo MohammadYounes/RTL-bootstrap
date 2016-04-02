@@ -1,0 +1,7 @@
+html[dir] body {
+  padding-top: 50px;
+}
+html[dir] .starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
