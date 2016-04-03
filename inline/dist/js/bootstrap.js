@@ -1456,7 +1456,7 @@ if (typeof jQuery === 'undefined') {
 
       $tip
         .detach()
-        .css({ top: 0, left: 0, display: 'block' })
+        .css({ top: 0, left: 0, right: '', display: 'block' })
         .addClass(placement)
         .data('bs.' + this.type, this)
 
@@ -1556,12 +1556,12 @@ if (typeof jQuery === 'undefined') {
 
     if (document.documentElement.dir === 'rtl'){
       var $parent = this.$element.parent()
-      var viewportWidth = this.$viewport.width()
-      var right = viewportWidth - offset.left - actualWidth
+      var viewportOuterWidth = this.$viewport.outerWidth()
+      var right = viewportOuterWidth - offset.left - actualWidth
       $tip.css(
         {
           left: '',
-          right: this.options.container ?  right : right - (viewportWidth - $parent.offset().left - $parent.outerWidth()) /*right - container right*/
+          right: this.options.container ?  right : right - (this.$viewport.width() - $parent.offset().left - $parent.outerWidth()) /*right - container right*/
         })
       delete offset.left
     }
