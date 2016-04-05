@@ -13,3 +13,5 @@ v2.3.2 has been made available for the time being at
 
 # Announcement
 Up to date RTL version of Bootstrap 3 is available at [this branch](https://github.com/MohammadYounes/RTL-bootstrap/tree/3), its automatically converted using [RTLCSS](https://github.com/MohammadYounes/rtlcss).
+
+A new version with inline RTL CSS is available at [this branch](https://github.com/MohammadYounes/RTL-bootstrap/tree/inline-rtl), its automatically converted using [postcss-inline-rtl](https://github.com/jakob101/postcss-inline-rtl). ([Live preview](http://mohammadyounes.github.io/RTL-bootstrap/inline/))
