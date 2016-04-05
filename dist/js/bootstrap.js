@@ -1456,7 +1456,7 @@ if (typeof jQuery === 'undefined') {
 
       $tip
         .detach()
-        .css({ top: 0, left: 0, display: 'block' })
+        .css({ top: 0, left: 0, right: '', display: 'block' })
         .addClass(placement)
         .data('bs.' + this.type, this)
 
@@ -1480,6 +1480,12 @@ if (typeof jQuery === 'undefined') {
         $tip
           .removeClass(orgPlacement)
           .addClass(placement)
+      }
+
+      if (document.documentElement.dir === 'rtl'){
+        placement = placement === 'right' ? 'left' :
+                    placement === 'left'  ? 'right' :
+                    placement
       }
 
       var calculatedOffset = this.getCalculatedOffset(placement, pos, actualWidth, actualHeight)
@@ -1547,6 +1553,18 @@ if (typeof jQuery === 'undefined') {
     var isVertical          = /top|bottom/.test(placement)
     var arrowDelta          = isVertical ? delta.left * 2 - width + actualWidth : delta.top * 2 - height + actualHeight
     var arrowOffsetPosition = isVertical ? 'offsetWidth' : 'offsetHeight'
+
+    if (document.documentElement.dir === 'rtl'){
+      var $parent = this.$element.parent()
+      var viewportOuterWidth = this.$viewport.outerWidth()
+      var right = viewportOuterWidth - offset.left - actualWidth
+      $tip.css(
+        {
+          left: '',
+          right: this.options.container ?  right : right - (this.$viewport.width() - $parent.offset().left - $parent.outerWidth()) /*right - container right*/
+        })
+      delete offset.left
+    }
 
     $tip.offset(offset)
     this.replaceArrow(arrowDelta, $tip[0][arrowOffsetPosition], isVertical)
