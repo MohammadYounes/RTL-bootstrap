@@ -1,7 +1,8 @@
 {
-  "name": "bootstrap",
-  "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+  "name": "bootstrap-inline-rtl",
+  "description": "RTL version of the most popular front-end framework for developing responsive, mobile first projects on the web.",
   "keywords": [
+    "rtl",
     "css",
     "js",
     "less",
@@ -11,7 +12,7 @@
     "framework",
     "web"
   ],
-  "homepage": "http://getbootstrap.com",
+  "homepage": "http://mohammadyounes.github.io/RTL-bootstrap/inline",
   "license": "MIT",
   "moduleType": "globals",
   "main": [

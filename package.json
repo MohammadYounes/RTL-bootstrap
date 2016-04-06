@@ -1,8 +1,9 @@
 {
-  "name": "bootstrap",
-  "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+  "name": "bootstrap-inline-rtl",
+  "description": "RTL version of the most popular front-end framework for developing responsive, mobile first projects on the web.",
   "version": "3.3.6",
   "keywords": [
+    "rtl",
     "css",
     "less",
     "mobile-first",
@@ -11,8 +12,8 @@
     "framework",
     "web"
   ],
-  "homepage": "http://getbootstrap.com",
-  "author": "Twitter, Inc.",
+  "homepage": "http://mohammadyounes.github.io/RTL-bootstrap/inline",
+  "author": "Mohammad Younes.",
   "scripts": {
     "change-version": "node grunt/change-version.js",
     "shrinkwrap": "npm shrinkwrap --dev && mv ./npm-shrinkwrap.json ./grunt/npm-shrinkwrap.json",
@@ -23,10 +24,10 @@
   "main": "./dist/js/npm",
   "repository": {
     "type": "git",
-    "url": "https://github.com/twbs/bootstrap.git"
+    "url": "https://github.com/MohammadYounes/RTL-bootstrap.git"
   },
   "bugs": {
-    "url": "https://github.com/twbs/bootstrap/issues"
+    "url": "https://github.com/MohammadYounes/RTL-bootstrap/issues"
   },
   "license": "MIT",
   "devDependencies": {
