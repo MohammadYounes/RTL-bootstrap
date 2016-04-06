@@ -7,7 +7,7 @@ A new version with inline RTL CSS is available at
 [this branch](https://github.com/MohammadYounes/RTL-bootstrap/tree/inline-rtl), its automatically converted using 
 [postcss-inline-rtl](https://github.com/jakob101/postcss-inline-rtl). 
 
-**Note:** To switch to RTL view, go to *Getting started* page and from the right side menu select `Switch to RTL`. 
+**Note:** To switch to RTL view, go to [Getting started](http://mohammadyounes.github.io/RTL-bootstrap/inline/getting-started/) page and from the right side menu select `Switch to RTL`. 
 
 
 
