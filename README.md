@@ -1,4 +1,4 @@
-# Boostrap Inline RTL
+# Boostrap Inline RTL ([Live preview](http://mohammadyounes.github.io/RTL-bootstrap/inline/))
 
 RTL version of [twitter’s bootstrap]( https://github.com/twbs/bootstrap)
 
@@ -6,7 +6,7 @@ RTL version of [twitter’s bootstrap]( https://github.com/twbs/bootstrap)
 A new version with inline RTL CSS is available at 
 [this branch](https://github.com/MohammadYounes/RTL-bootstrap/tree/inline-rtl), its automatically converted using 
 [postcss-inline-rtl](https://github.com/jakob101/postcss-inline-rtl). 
-([Live preview](http://mohammadyounes.github.io/RTL-bootstrap/inline/))
+
 
 ## Install via Bower
 
