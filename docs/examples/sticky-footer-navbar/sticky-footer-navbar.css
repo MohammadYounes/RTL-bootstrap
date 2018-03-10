@@ -4,8 +4,7 @@ html {
   position: relative;
   min-height: 100%;
 }
-body {
-  /* Margin bottom by footer height */
+html[dir] body {
   margin-bottom: 60px;
 }
 .footer {
@@ -14,6 +13,8 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
+}
+html[dir] .footer {
   background-color: #f5f5f5;
 }
 
@@ -22,14 +23,19 @@ body {
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
 
-body > .container {
+html[dir] body > .container {
   padding: 60px 15px 0;
 }
-.container .text-muted {
+html[dir] .container .text-muted {
   margin: 20px 0;
 }
 
-.footer > .container {
+html[dir="ltr"] .footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+html[dir="rtl"] .footer > .container {
   padding-right: 15px;
   padding-left: 15px;
 }

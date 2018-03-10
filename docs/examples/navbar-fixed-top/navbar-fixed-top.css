@@ -1,4 +1,6 @@
 body {
   min-height: 2000px;
+}
+html[dir] body {
   padding-top: 70px;
 }

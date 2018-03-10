@@ -1,4 +1,4 @@
-body {
+html[dir] body {
   padding-top: 70px;
   padding-bottom: 30px;
 }
@@ -6,10 +6,13 @@ body {
 .theme-dropdown .dropdown-menu {
   position: static;
   display: block;
+}
+
+html[dir] .theme-dropdown .dropdown-menu {
   margin-bottom: 20px;
 }
 
-.theme-showcase > p > .btn {
+html[dir] .theme-showcase > p > .btn {
   margin: 5px 0;
 }
 

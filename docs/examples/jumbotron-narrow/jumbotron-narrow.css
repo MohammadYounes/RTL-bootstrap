@@ -1,33 +1,39 @@
 /* Space out content a bit */
-body {
+html[dir] body {
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
+html[dir="ltr"] .header, html[dir="ltr"] .marketing, html[dir="ltr"] .footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+html[dir="rtl"] .header, html[dir="rtl"] .marketing, html[dir="rtl"] .footer {
   padding-right: 15px;
   padding-left: 15px;
 }
 
 /* Custom page header */
-.header {
+html[dir] .header {
   padding-bottom: 20px;
   border-bottom: 1px solid #e5e5e5;
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
+  line-height: 40px;
+}
+html[dir] .header h3 {
   margin-top: 0;
   margin-bottom: 0;
-  line-height: 40px;
 }
 
 /* Custom page footer */
 .footer {
-  padding-top: 19px;
   color: #777;
+}
+html[dir] .footer {
+  padding-top: 19px;
   border-top: 1px solid #e5e5e5;
 }
 
@@ -37,43 +43,47 @@ body {
     max-width: 730px;
   }
 }
-.container-narrow > hr {
+html[dir] .container-narrow > hr {
   margin: 30px 0;
 }
 
 /* Main marketing message and sign up button */
-.jumbotron {
+html[dir] .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
 .jumbotron .btn {
-  padding: 14px 24px;
   font-size: 21px;
+}
+html[dir] .jumbotron .btn {
+  padding: 14px 24px;
 }
 
 /* Supporting marketing content */
-.marketing {
+html[dir] .marketing {
   margin: 40px 0;
 }
-.marketing p + h4 {
+html[dir] .marketing p + h4 {
   margin-top: 28px;
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
+  html[dir="ltr"] .header, html[dir="ltr"] .marketing, html[dir="ltr"] .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  html[dir="rtl"] .header, html[dir="rtl"] .marketing, html[dir="rtl"] .footer {
     padding-right: 0;
     padding-left: 0;
   }
   /* Space out the masthead */
-  .header {
+  html[dir] .header {
     margin-bottom: 30px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
+  html[dir] .jumbotron {
     border-bottom: 0;
   }
 }

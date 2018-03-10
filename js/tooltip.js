@@ -226,7 +226,7 @@
           .addClass(placement)
       }
 
-      if (document.documentElement.dir === 'rtl'){
+      if (document.dir === 'rtl'){
         placement = placement === 'right' ? 'left' :
                     placement === 'left'  ? 'right' :
                     placement
@@ -298,7 +298,7 @@
     var arrowDelta          = isVertical ? delta.left * 2 - width + actualWidth : delta.top * 2 - height + actualHeight
     var arrowOffsetPosition = isVertical ? 'offsetWidth' : 'offsetHeight'
 
-    if (document.documentElement.dir === 'rtl'){
+    if (document.dir === 'rtl'){
       var $parent = this.$element.parent()
       var viewportOuterWidth = this.$viewport.outerWidth()
       var right = viewportOuterWidth - offset.left - actualWidth

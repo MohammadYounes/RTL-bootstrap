@@ -3,8 +3,11 @@
 /* Padding below the footer and lighter body text */
 
 body {
-  padding-bottom: 40px;
   color: #5a5a5a;
+}
+
+html[dir] body {
+  padding-bottom: 40px;
 }
 
 
@@ -15,17 +18,31 @@ body {
 .navbar-wrapper {
   position: absolute;
   top: 0;
+  z-index: 20;
+}
+html[dir="ltr"] .navbar-wrapper {
   right: 0;
   left: 0;
-  z-index: 20;
+}
+html[dir="rtl"] .navbar-wrapper {
+  right: 0;
+  left: 0;
 }
 
 /* Flip around the padding for proper display in narrow viewports */
-.navbar-wrapper > .container {
+html[dir="ltr"] .navbar-wrapper > .container {
   padding-right: 0;
   padding-left: 0;
 }
-.navbar-wrapper .navbar {
+html[dir="rtl"] .navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+html[dir="ltr"] .navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+html[dir="rtl"] .navbar-wrapper .navbar {
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -40,6 +57,8 @@ body {
 /* Carousel base class */
 .carousel {
   height: 500px;
+}
+html[dir] .carousel {
   margin-bottom: 60px;
 }
 /* Since positioning the image, we need to help out the caption */
@@ -50,14 +69,21 @@ body {
 /* Declare heights because of positioning of img element */
 .carousel .item {
   height: 500px;
+}
+html[dir] .carousel .item {
   background-color: #777;
 }
 .carousel-inner > .item > img {
   position: absolute;
   top: 0;
-  left: 0;
   min-width: 100%;
   height: 500px;
+}
+html[dir="ltr"] .carousel-inner > .item > img {
+  left: 0;
+}
+html[dir="rtl"] .carousel-inner > .item > img {
+  right: 0;
 }
 
 
@@ -65,14 +91,18 @@ body {
 -------------------------------------------------- */
 
 /* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
+html[dir] .marketing .col-lg-4 {
   margin-bottom: 20px;
   text-align: center;
 }
 .marketing h2 {
   font-weight: normal;
 }
-.marketing .col-lg-4 p {
+html[dir="ltr"] .marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+html[dir="rtl"] .marketing .col-lg-4 p {
   margin-right: 10px;
   margin-left: 10px;
 }
@@ -81,8 +111,8 @@ body {
 /* Featurettes
 ------------------------- */
 
-.featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+html[dir] .featurette-divider {
+  margin: 80px 0;
 }
 
 /* Thin out the marketing headings */
@@ -98,28 +128,38 @@ body {
 
 @media (min-width: 768px) {
   /* Navbar positioning foo */
-  .navbar-wrapper {
+  html[dir] .navbar-wrapper {
     margin-top: 20px;
   }
-  .navbar-wrapper .container {
+  html[dir="ltr"] .navbar-wrapper .container {
     padding-right: 15px;
     padding-left: 15px;
   }
-  .navbar-wrapper .navbar {
+  html[dir="rtl"] .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  html[dir="ltr"] .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  html[dir="rtl"] .navbar-wrapper .navbar {
     padding-right: 0;
     padding-left: 0;
   }
 
   /* The navbar becomes detached from the top, so we round the corners */
-  .navbar-wrapper .navbar {
+  html[dir] .navbar-wrapper .navbar {
     border-radius: 4px;
   }
 
   /* Bump up size of carousel content */
   .carousel-caption p {
-    margin-bottom: 20px;
     font-size: 21px;
     line-height: 1.4;
+  }
+  html[dir] .carousel-caption p {
+    margin-bottom: 20px;
   }
 
   .featurette-heading {
@@ -128,7 +168,7 @@ body {
 }
 
 @media (min-width: 992px) {
-  .featurette-heading {
+  html[dir] .featurette-heading {
     margin-top: 120px;
   }
 }

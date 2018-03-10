@@ -9,18 +9,36 @@ body {
   min-width: 250px;
   max-width: 500px;
   min-height: 100px;
+}
+html[dir="ltr"] .tooltip .tooltip-inner {
   text-align: left;
+}
+html[dir="rtl"] .tooltip .tooltip-inner {
+  text-align: right;
 }
 .container-viewport {
   position: absolute;
   top: 100px;
+  height: 300px;
+}
+html[dir] .container-viewport {
+  background-color: #eee;
+}
+html[dir="ltr"] .container-viewport {
   right: 250px;
   left: 250px;
-  height: 300px;
-  background-color: #eee;
+}
+html[dir="rtl"] .container-viewport {
+  right: 250px;
+  left: 250px;
 }
 .btn-bottom {
   position: absolute;
   bottom: 0;
+}
+html[dir="ltr"] .btn-bottom {
   left: 0;
+}
+html[dir="rtl"] .btn-bottom {
+  right: 0;
 }

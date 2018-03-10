@@ -1,14 +1,14 @@
-h4 {
+html[dir] h4 {
   margin-top: 25px;
 }
-.row {
+html[dir] .row {
   margin-bottom: 20px;
 }
-.row .row {
+html[dir] .row .row {
   margin-top: 10px;
   margin-bottom: 0;
 }
-[class*="col-"] {
+html[dir] [class*="col-"] {
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: #eee;
@@ -17,7 +17,7 @@ h4 {
   border: 1px solid rgba(86,61,124,.2);
 }
 
-hr {
+html[dir] hr {
   margin-top: 40px;
   margin-bottom: 40px;
 }

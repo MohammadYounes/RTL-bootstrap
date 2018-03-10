@@ -6,10 +6,10 @@ html,
 body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
-body {
+html[dir] body {
   padding-top: 70px;
 }
-footer {
+html[dir] footer {
   padding: 30px 0;
 }
 
@@ -20,35 +20,63 @@ footer {
 @media screen and (max-width: 767px) {
   .row-offcanvas {
     position: relative;
+  }
+  html[dir] .row-offcanvas {
     -webkit-transition: all .25s ease-out;
          -o-transition: all .25s ease-out;
             transition: all .25s ease-out;
   }
 
-  .row-offcanvas-right {
+  html[dir="ltr"] .row-offcanvas-right {
     right: 0;
   }
 
-  .row-offcanvas-left {
+  html[dir="rtl"] .row-offcanvas-right {
     left: 0;
   }
 
-  .row-offcanvas-right
+  html[dir="ltr"] .row-offcanvas-left {
+    left: 0;
+  }
+
+  html[dir="rtl"] .row-offcanvas-left {
+    right: 0;
+  }
+
+  html[dir="ltr"] .row-offcanvas-right
   .sidebar-offcanvas {
-    right: -50%; /* 6 columns */
+    right: -50%;
   }
 
-  .row-offcanvas-left
+  html[dir="rtl"] .row-offcanvas-right
   .sidebar-offcanvas {
-    left: -50%; /* 6 columns */
+    left: -50%;
   }
 
-  .row-offcanvas-right.active {
-    right: 50%; /* 6 columns */
+  html[dir="ltr"] .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%;
   }
 
-  .row-offcanvas-left.active {
-    left: 50%; /* 6 columns */
+  html[dir="rtl"] .row-offcanvas-left
+  .sidebar-offcanvas {
+    right: -50%;
+  }
+
+  html[dir="ltr"] .row-offcanvas-right.active {
+    right: 50%;
+  }
+
+  html[dir="rtl"] .row-offcanvas-right.active {
+    left: 50%;
+  }
+
+  html[dir="ltr"] .row-offcanvas-left.active {
+    left: 50%;
+  }
+
+  html[dir="rtl"] .row-offcanvas-left.active {
+    right: 50%;
   }
 
   .sidebar-offcanvas {

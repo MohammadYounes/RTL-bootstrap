@@ -62,12 +62,12 @@
 
       var activateLTR = function () {
         $dirBtn.text('Switch to RTL')
-        document.documentElement.dir = 'ltr'
+        document.dir = 'ltr'
       }
 
       var activateRTL = function () {
         $dirBtn.text('Switch to LTR')
-        document.documentElement.dir = 'rtl'
+        document.dir = 'rtl'
         localStorage.setItem('rtl', true)
       }
 
@@ -76,8 +76,7 @@
       }
 
       $dirBtn.click(function () {
-        var dir = document.documentElement.dir
-        if (dir === 'rtl') {
+        if (document.dir === 'rtl') {
           activateLTR()
           localStorage.removeItem('rtl')
         } else {

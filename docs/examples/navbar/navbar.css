@@ -1,8 +1,8 @@
-body {
+html[dir] body {
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-.navbar {
+html[dir] .navbar {
   margin-bottom: 20px;
 }

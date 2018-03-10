@@ -1,6 +1,6 @@
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Bootstrap Inline RTL v3.3.7 (http://mohammadyounes.github.io/RTL-bootstrap/inline)
+ * Copyright 2011-2018 Mohammad Younes.
  * Licensed under the MIT license
  */
 
@@ -1482,7 +1482,7 @@ if (typeof jQuery === 'undefined') {
           .addClass(placement)
       }
 
-      if (document.documentElement.dir === 'rtl'){
+      if (document.dir === 'rtl'){
         placement = placement === 'right' ? 'left' :
                     placement === 'left'  ? 'right' :
                     placement
@@ -1554,7 +1554,7 @@ if (typeof jQuery === 'undefined') {
     var arrowDelta          = isVertical ? delta.left * 2 - width + actualWidth : delta.top * 2 - height + actualHeight
     var arrowOffsetPosition = isVertical ? 'offsetWidth' : 'offsetHeight'
 
-    if (document.documentElement.dir === 'rtl'){
+    if (document.dir === 'rtl'){
       var $parent = this.$element.parent()
       var viewportOuterWidth = this.$viewport.outerWidth()
       var right = viewportOuterWidth - offset.left - actualWidth

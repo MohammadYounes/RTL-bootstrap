@@ -13,8 +13,10 @@ a:hover {
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
+  color: #333; /* Prevent inheritance from `body` */
+}
+html[dir] .btn-default, html[dir] .btn-default:hover, html[dir] .btn-default:focus {
+  text-shadow: none;
   background-color: #fff;
   border: 1px solid #fff;
 }
@@ -31,6 +33,8 @@ body {
 }
 body {
   color: #fff;
+}
+html[dir] body {
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
@@ -41,6 +45,8 @@ body {
   width: 100%;
   height: 100%; /* For at least Firefox */
   min-height: 100%;
+}
+html[dir] .site-wrapper {
   -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
           box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
@@ -48,13 +54,17 @@ body {
   display: table-cell;
   vertical-align: top;
 }
-.cover-container {
+html[dir="ltr"] .cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+html[dir="rtl"] .cover-container {
   margin-right: auto;
   margin-left: auto;
 }
 
 /* Padding for spacing */
-.inner {
+html[dir] .inner {
   padding: 30px;
 }
 
@@ -62,7 +72,7 @@ body {
 /*
  * Header
  */
-.masthead-brand {
+html[dir] .masthead-brand {
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -70,20 +80,30 @@ body {
 .masthead-nav > li {
   display: inline-block;
 }
-.masthead-nav > li + li {
+html[dir="ltr"] .masthead-nav > li + li {
   margin-left: 20px;
 }
+html[dir="rtl"] .masthead-nav > li + li {
+  margin-right: 20px;
+}
 .masthead-nav > li > a {
-  padding-right: 0;
-  padding-left: 0;
   font-size: 16px;
   font-weight: bold;
   color: #fff; /* IE8 proofing */
   color: rgba(255,255,255,.75);
+}
+html[dir] .masthead-nav > li > a {
   border-bottom: 2px solid transparent;
 }
-.masthead-nav > li > a:hover,
-.masthead-nav > li > a:focus {
+html[dir="ltr"] .masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+}
+html[dir="rtl"] .masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+}
+html[dir] .masthead-nav > li > a:hover, html[dir] .masthead-nav > li > a:focus {
   background-color: transparent;
   border-bottom-color: #a9a9a9;
   border-bottom-color: rgba(255,255,255,.25);
@@ -92,15 +112,23 @@ body {
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
   color: #fff;
+}
+html[dir] .masthead-nav > .active > a, html[dir] .masthead-nav > .active > a:hover, html[dir] .masthead-nav > .active > a:focus {
   border-bottom-color: #fff;
 }
 
 @media (min-width: 768px) {
-  .masthead-brand {
+  html[dir="ltr"] .masthead-brand {
     float: left;
   }
-  .masthead-nav {
+  html[dir="rtl"] .masthead-brand {
     float: right;
+  }
+  html[dir="ltr"] .masthead-nav {
+    float: right;
+  }
+  html[dir="rtl"] .masthead-nav {
+    float: left;
   }
 }
 
@@ -109,12 +137,14 @@ body {
  * Cover
  */
 
-.cover {
+html[dir] .cover {
   padding: 0 20px;
 }
 .cover .btn-lg {
-  padding: 10px 20px;
   font-weight: bold;
+}
+html[dir] .cover .btn-lg {
+  padding: 10px 20px;
 }
 
 
