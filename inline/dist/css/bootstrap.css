@@ -1,5 +1,5 @@
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
@@ -1167,7 +1167,6 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3085,7 +3084,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3674,7 +3672,6 @@ html[dir] .btn {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -5846,7 +5843,6 @@ html[dir] .pagination > .active > a, html[dir] .pagination > .active > span, htm
 .pagination > .disabled > a:hover,
 .pagination > .disabled > a:focus {
   color: #777;
-  pointer-events: none;
   cursor: not-allowed;
 }
 html[dir] .pagination > .disabled > span, html[dir] .pagination > .disabled > span:hover, html[dir] .pagination > .disabled > span:focus, html[dir] .pagination > .disabled > a, html[dir] .pagination > .disabled > a:hover, html[dir] .pagination > .disabled > a:focus {
@@ -5951,7 +5947,6 @@ html[dir="rtl"] .pager .previous > a, html[dir="rtl"] .pager .previous > span {
 .pager .disabled > a:focus,
 .pager .disabled > span {
   color: #777;
-  pointer-events: none;
   cursor: not-allowed;
 }
 html[dir] .pager .disabled > a, html[dir] .pager .disabled > a:hover, html[dir] .pager .disabled > a:focus, html[dir] .pager .disabled > span {
@@ -6258,7 +6253,7 @@ html[dir] .alert-danger hr {
 .alert-danger .alert-link {
   color: #843534;
 }
-@-webkit-keyframes progress-bar-stripes-ltr {
+@-webkit-keyframes progress-bar-stripes-rtl {
   from {
     background-position: 40px 0;
   }
@@ -6274,7 +6269,7 @@ html[dir] .alert-danger hr {
     background-position: 0 0;
   }
 }
-@-o-keyframes progress-bar-stripes-ltr {
+@-o-keyframes progress-bar-stripes-rtl {
   from {
     background-position: 40px 0;
   }
@@ -6290,7 +6285,7 @@ html[dir] .alert-danger hr {
     background-position: 0 0;
   }
 }
-@keyframes progress-bar-stripes-ltr {
+@keyframes progress-bar-stripes-rtl {
   from {
     background-position: 40px 0;
   }

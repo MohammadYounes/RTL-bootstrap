@@ -20,6 +20,8 @@ html[dir] footer {
 @media screen and (max-width: 767px) {
   .row-offcanvas {
     position: relative;
+  }
+  html[dir] .row-offcanvas {
     -webkit-transition: all .25s ease-out;
          -o-transition: all .25s ease-out;
             transition: all .25s ease-out;

@@ -248,6 +248,7 @@ html[dir] .bs-docs-masthead, html[dir] .bs-docs-header {
   background-color: #6f5499;
   background-image: -webkit-linear-gradient(top, #563d7c 0%, #6f5499 100%);
   background-image:      -o-linear-gradient(top, #563d7c 0%, #6f5499 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#563d7c), to(#6f5499));
   background-image:         linear-gradient(to bottom, #563d7c 0%, #6f5499 100%);
   background-repeat: repeat-x;
 }
@@ -1021,6 +1022,7 @@ html[dir] .color-swatches .bs-gray {
 }
 html[dir] .bs-team .github-btn {
   margin-top: 6px;
+  border: none;
 }
 html[dir="ltr"] .bs-team .github-btn {
   float: right;
@@ -1448,6 +1450,8 @@ html[dir] .highlight {
   background-color: #f7f7f9;
   border: 1px solid #e1e1e8;
   border-radius: 4px;
+
+  direction: ltr;
 }
 .highlight pre {
   word-break: normal;
@@ -1940,6 +1944,9 @@ html[dir] .btn-clipboard-hover {
 
 *:hover > .anchorjs-link {
   opacity: .75;
+}
+
+html[dir] *:hover > .anchorjs-link {
   -webkit-transition: color .16s linear;
        -o-transition: color .16s linear;
           transition: color .16s linear;

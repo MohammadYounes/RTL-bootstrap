@@ -13,7 +13,7 @@ a:hover {
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
-  color: #333; /* Prevent inheritence from `body` */
+  color: #333; /* Prevent inheritance from `body` */
 }
 html[dir] .btn-default, html[dir] .btn-default:hover, html[dir] .btn-default:focus {
   text-shadow: none;
